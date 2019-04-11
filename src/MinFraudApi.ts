@@ -380,6 +380,13 @@ export interface Order {
 }
 
 /**
+ * Shopping Cart field
+ *
+ * @link https://dev.maxmind.com/minfraud/#Shopping_Cart_shopping_cart
+ */
+export type ShoppingCart = ShoppingCartItem[];
+
+/**
  * Shopping Cart item
  *
  * @link https://dev.maxmind.com/minfraud/#Shopping_Cart_Item
