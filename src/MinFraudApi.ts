@@ -93,6 +93,26 @@ export interface Account {
     /**
      * An MD5 hash as a hexadecimal string of the username or login name associated with the account.
      */
-    username_md5: string,
+    username_md5: string;
 
+}
+
+/**
+ * Email field
+ *
+ * @link https://dev.maxmind.com/minfraud/#Email_email
+ */
+export interface Email {
+
+    /**
+     * This field must be either be a valid email address or an MD5 of the lowercased email used in the transaction.
+     * Important: if using the MD5 hash, please be sure to convert the email address to lowercase before calculating
+     * its MD5 hash.
+     */
+    address: string;
+
+    /**
+     * The domain of the email address used in the transaction.
+     */
+    domain: string;
 }
