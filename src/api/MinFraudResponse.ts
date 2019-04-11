@@ -312,6 +312,6 @@ export interface ShippingAddress {
      * in the IP country. If the IP address could not be geolocated or no shipping address was provided, then the
      * field will not be included in the response.
      */
-    is_in_ip_country: string;
+    is_in_ip_country: boolean;
 
 }
