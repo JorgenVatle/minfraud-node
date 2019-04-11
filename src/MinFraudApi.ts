@@ -71,6 +71,12 @@ export interface Event {
         | 'survey'
 }
 
+/**
+ * Account field
+ * This object contains account information for the end-user on the site where the event took place.
+ *
+ * @link https://dev.maxmind.com/minfraud/#Account_account
+ */
 export interface Account {
 
     /**
