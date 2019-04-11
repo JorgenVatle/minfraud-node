@@ -417,3 +417,19 @@ export interface ShoppingCartItem {
 
 }
 
+/**
+ * Custom Inputs field
+ *
+ * @link https://dev.maxmind.com/minfraud/#Custom_Inputs_custom_inputs
+ */
+export interface CustomInputs {
+
+    /**
+     * Your custom input field.
+     *
+     * @link https://support.maxmind.com/custom-inputs-guide/
+     */
+    [key: string]: string | number | boolean;
+
+}
+
