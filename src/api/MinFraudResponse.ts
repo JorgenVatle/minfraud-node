@@ -37,6 +37,13 @@ export default interface MinFraudResponse {
      */
     ip_address: IpAddress;
 
+}
+
+/**
+ * minFraud Insights request response.
+ */
+export interface MinFraudInsightsResponse extends MinFraudResponse {
+    
     /**
      * Credit Card field
      *
@@ -72,12 +79,19 @@ export default interface MinFraudResponse {
      */
     billing_address: BillingAddress;
 
+}
+
+/**
+ * minFraud Factors request response.
+ */
+export interface MinFraudFactorsResponse extends MinFraudInsightsResponse {
+
     /**
      * Disposition field
      *
      * @Link https://dev.maxmind.com/minfraud/#Disposition_disposition
      */
-    disposition?: Disposition;
+    disposition: Disposition;
 
 }
 
