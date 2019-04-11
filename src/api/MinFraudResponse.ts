@@ -262,3 +262,56 @@ export interface Email {
     is_high_risk: boolean;
 
 }
+
+/**
+ * Shipping Address field
+ *
+ * This object contains minFraud response data associated with the shipping address. If the shipping address was not
+ * provided in the request or could not be parsed, this object will not be present in the response.
+ *
+ * @link https://dev.maxmind.com/minfraud/#Shipping_Address_shipping_address
+ */
+export interface ShippingAddress {
+
+    /**
+     * This field is true if the shipping address is an address associated with fraudulent transactions. The field
+     * is false when the address is not associated with increased risk. The key will only be present when a shipping
+     * address is provided.
+     */
+    is_high_risk: boolean;
+
+    /**
+     * This field is true if the postal code provided with the address is in the city for the address. The field is
+     * false when the postal code is not in the city. The key will only be present when a shipping postal code,
+     * city, and country are provided.
+     */
+    is_postal_in_city: boolean;
+
+    /**
+     * The approximate latitude associated with the address.
+     */
+    latitude: number;
+
+    /**
+     * The approximate longitude associated with the address.
+     */
+    longitude: number;
+
+    /**
+     * The distance in kilometers from the address to the IP location.
+     */
+    distance_to_ip_location: number;
+
+    /**
+     * The distance in kilometers from the shipping address to billing address.
+     */
+    distance_to_billing_address: number;
+
+    /**
+     * This field is true if the shipping address is in the IP country. The field is false when the address is not
+     * in the IP country. If the IP address could not be geolocated or no shipping address was provided, then the
+     * field will not be included in the response.
+     */
+    is_in_ip_country: string;
+
+}
