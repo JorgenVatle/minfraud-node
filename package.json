@@ -14,6 +14,7 @@
     "type": "git",
     "url": "git+https://github.com/JorgenVatle/minfraud-node.git"
   },
+  "files": ["dist"],
   "keywords": [
     "minFraud",
     "maxmind",
