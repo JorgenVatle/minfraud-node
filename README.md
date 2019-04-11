@@ -8,6 +8,10 @@ lets you take advantage of the the brand spanking new
 [`async`/`await`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function)
 syntax.
 
+[![Downloads](https://img.shields.io/npm/dt/minfraud-node.svg)](https://www.npmjs.com/package/minfraud-node)
+[![Version](https://img.shields.io/npm/v/minfraud-node.svg)](https://www.npmjs.com/package/minfraud-node)
+[![CircleCI](https://circleci.com/gh/JorgenVatle/minfraud-node.svg?style=svg)](https://circleci.com/gh/JorgenVatle/minfraud-node)
+
 ## Requirements
 - Node 0.12+
 
