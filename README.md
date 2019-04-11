@@ -10,10 +10,8 @@ syntax.
 
 [![Downloads](https://img.shields.io/npm/dt/minfraud-node.svg)](https://www.npmjs.com/package/minfraud-node)
 [![Version](https://img.shields.io/npm/v/minfraud-node.svg)](https://www.npmjs.com/package/minfraud-node)
+[![Node Version](https://img.shields.io/node/v/minfraud-node.svg)](https://www.npmjs.com/package/minfraud-node)
 [![CircleCI](https://circleci.com/gh/JorgenVatle/minfraud-node.svg?style=svg)](https://circleci.com/gh/JorgenVatle/minfraud-node)
-
-## Requirements
-- Node 0.12+
 
 ## Installation
 Takes a second to install using npm.
