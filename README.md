@@ -49,7 +49,7 @@ const insight = await client.insight({
 
 ### [Get Factors](https://dev.maxmind.com/minfraud/#Response_Body_Examples)
 ```js
-const factors = await client.factor({
+const factor = await client.factor({
     device: {
         ip_address: '127.0.0.1'
     }
