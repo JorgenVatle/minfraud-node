@@ -43,7 +43,14 @@ export default interface MinFraudResponse {
  * minFraud Insights request response.
  */
 export interface MinFraudInsightsResponse extends MinFraudResponse {
-    
+
+    /**
+     * Ip Address field
+     *
+     * @link https://dev.maxmind.com/minfraud/#IP_Address_ip_address
+     */
+    ip_address: IpAddressInsight;
+
     /**
      * Credit Card field
      *
@@ -145,7 +152,16 @@ export interface IpAddress {
      */
     risk: number;
 
-    country?: {
+}
+
+/**
+ * IP Address insight object.
+ *
+ * @link https://dev.maxmind.com/minfraud/#IP_Address_ip_address
+ */
+export interface IpAddressInsight extends IpAddress {
+
+    country: {
 
         /**
          * This value is true if the IP country is high risk and false if the country is not high risk. If the IP
@@ -155,7 +171,7 @@ export interface IpAddress {
 
     }
 
-    location?: {
+    location: {
 
         /**
          * The date and time of the transaction in the time zone associated with the IP address. The value is
@@ -165,6 +181,7 @@ export interface IpAddress {
         local_time: string;
 
     }
+
 }
 
 /**
