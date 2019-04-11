@@ -30,11 +30,15 @@ const client = new MinFraud({
     license: 'yItotWnzWooT' // Your MaxMind License Key
 }) 
 ```
-
+### Scores, Insights and Factors
 See [minFraud Services](https://www.maxmind.com/en/solutions/minfraud-services) for the difference between Scores,
 Insights and Factors.
 
-You can use the same client object for all three methods. (`score()`, `insight()` `factor()`)
+### The client object
+See [MaxMind's example request](https://dev.maxmind.com/minfraud/#Example_Request) for a list of data attributes
+you can pass into the following methods.
+
+You can use the same request object for all three methods. (`score()`, `insight()` `factor()`)
 
 ### Get Score
 ```js
