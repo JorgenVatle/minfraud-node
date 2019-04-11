@@ -230,3 +230,35 @@ export interface Device {
     local_time: string;
 
 }
+
+/**
+ * Email field
+ *
+ * This object contains information about the email address passed in the request.
+ *
+ * @link https://dev.maxmind.com/minfraud/#Email_email-2
+ */
+export interface Email {
+
+    /**
+     * A date string (e.g. 2017-04-24) to identify the date an email address was first seen by MaxMind. This is
+     * expressed using the ISO 8601 date format YYYY-MM-DD
+     */
+    first_seen: string;
+
+    /**
+     * This field is true if MaxMind believes that this email domain is for a free email provider such as Gmail or
+     * Yahoo! Mail. It is false if the domain is not for a known free email provider. The key will only be present
+     * if a valid email address or email domain is provided.
+     */
+    is_free: boolean;
+
+    /**
+     * This field is true if MaxMind believes that this email address is likely to be used for fraud. It is false if
+     * MaxMind does not believe the address is used for fraud. The key will only be present if a valid email address
+     * or email address hash is provided. Note that this is also factored into the overall risk_score in the
+     * response as well.
+     */
+    is_high_risk: boolean;
+
+}
