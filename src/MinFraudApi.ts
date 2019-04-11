@@ -1,4 +1,6 @@
 import Axios, {AxiosInstance} from "axios";
+import MinFraudRequest from "./api/MinFraudRequest";
+import MinFraudResponse from "./api/MinFraudResponse";
 
 interface MinFraudCredentials {
     accountId: string;
@@ -23,6 +25,17 @@ export default class MinFraudApi {
                 password: credentials.license,
             }
         });
+    }
+
+    /**
+     * Request a minFraud score for the given data.
+     *
+     * @param data
+     */
+    public async score(data: MinFraudRequest): Promise<MinFraudResponse> {
+        const { data: score } = await this.api.post('/score', data);
+
+        return score;
     }
 
 }
