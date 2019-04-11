@@ -378,3 +378,35 @@ export interface Order {
      */
     has_gift_message: boolean;
 }
+
+/**
+ * Shopping Cart item
+ *
+ * @link https://dev.maxmind.com/minfraud/#Shopping_Cart_Item
+ */
+export interface ShoppingCartItem {
+
+    /**
+     * The category of the item.
+     */
+    category: string;
+
+    /**
+     * Your internal ID for the item. No specific format is required.
+     */
+    item_id: string;
+
+    /**
+     * The quantity of the item in the shopping cart. The value must be at least 0, at most 1014-1, and have no
+     * fractional part.
+     */
+    quantity: number;
+
+    /**
+     * The per-unit price of this item in the shopping cart. This should use the same currency as the order
+     * currency. The value must be at least 0 and at most 1e14 – 1.
+     */
+    price: number;
+
+}
+
