@@ -15,24 +15,24 @@ export interface Device {
     /**
      * The HTTP “User-Agent” header of the browser used in the transaction.
      */
-    user_agent: string;
+    user_agent?: string;
 
     /**
      * The HTTP “Accept-Language” header of the device used in the transaction.
      */
-    accept_language: string;
+    accept_language?: string;
 
     /**
      * The number of seconds between the creation of the user’s session and the time of the transaction. Note that
      * session_age is not the duration of the current visit, but the time since the start of the first visit.
      * The value must be at least 0 and at most 1014-1.
      */
-    session_age: string;
+    session_age?: string;
 
     /**
      * An ID that uniquely identifies a visitor’s session on the site.
      */
-    session_id: string;
+    session_id?: string;
 }
 
 /**
@@ -47,25 +47,25 @@ export interface Event {
      * Your internal ID for the transaction. We can use this to locate a specific transaction in our logs, and it will
      * also show up in email alerts and notifications from us to you. No specific format is required.
      */
-    transaction_id: string;
+    transaction_id?: string;
 
     /**
      * Your internal ID for the shop, affiliate, or merchant this order is coming from. Required for minFraud users who
      * are resellers, payment providers, gateways and affiliate networks. No specific format is required.
      */
-    shop_id: string;
+    shop_id?: string;
 
     /**
      * The date and time the event occurred. The string must be in the RFC 3339 date-time format,
      * e.g., “2012-04-12T23:20:50.52Z”. The time must be within the past 10 years. If this field is not in the
      * request, the current time will be used.
      */
-    time: string;
+    time?: string;
 
     /**
      * Type of event that is being scored.
      */
-    type: 'account_creation'
+    type?: 'account_creation'
         | 'account_login'
         | 'email_change'
         | 'password_reset'
@@ -89,7 +89,7 @@ export interface Account {
      * account to be changed, this should not be the login name for the account, but rather should be an internal
      * ID that does not change. This is not your MaxMind account ID. No specific format is required.
      */
-    user_id: string;
+    user_id?: string;
 
     /**
      * An MD5 hash as a hexadecimal string of the username or login name associated with the account.
@@ -110,12 +110,12 @@ export interface Email {
      * Important: if using the MD5 hash, please be sure to convert the email address to lowercase before calculating
      * its MD5 hash.
      */
-    address: string;
+    address?: string;
 
     /**
      * The domain of the email address used in the transaction.
      */
-    domain: string;
+    domain?: string;
 }
 
 /**
@@ -128,22 +128,22 @@ export interface Billing {
     /**
      * The first name of the end user as provided in their billing information.
      */
-    first_name: string;
+    first_name?: string;
 
     /**
      * The last name of the end user as provided in their billing information.
      */
-    last_name: string;
+    last_name?: string;
 
     /**
      * The company of the end user as provided in their billing information.
      */
-    company: string;
+    company?: string;
 
     /**
      * The first line of the user’s billing address.
      */
-    address: string;
+    address?: string;
 
     /**
      * The second line of the user’s billing address.
@@ -153,34 +153,34 @@ export interface Billing {
     /**
      * The city of the user’s billing address.
      */
-    city: string;
+    city?: string;
 
     /**
      * The ISO 3166-2 subdivision code for the user’s billing address.
      */
-    region: string;
+    region?: string;
 
     /**
      * The two character ISO 3166-1 alpha-2 country code of the user’s billing address.
      */
-    country: string;
+    country?: string;
 
     /**
      * The postal code of the user’s billing address.
      */
-    postal: string;
+    postal?: string;
 
     /**
      * The phone number without the country code for the user’s billing address. Punctuation characters will be
      * stripped. After stripping punctuation characters, the number must contain only digits.
      */
-    phone_number: string;
+    phone_number?: string;
 
     /**
      * The country code for phone number associated with the user’s billing address. If you provide this information
      * then you must provide at least one digit.
      */
-    phone_country_code: string;
+    phone_country_code?: string;
 }
 
 /**
@@ -193,7 +193,7 @@ export interface Shipping extends Billing {
     /**
      * The shipping delivery speed for the order
      */
-    delivery_speed: 'same_day' | 'overnight' | 'expedited' | 'standard';
+    delivery_speed?: 'same_day' | 'overnight' | 'expedited' | 'standard';
 
 }
 
@@ -207,7 +207,7 @@ export interface Payment {
     /**
      * The payment processor used for the transaction.
      */
-    processor: 'adyen'
+    processor?: 'adyen'
         | 'altapay'
         | 'amazon_payments'
         | 'american_express_payment_gateway'
@@ -323,12 +323,12 @@ export interface Payment {
     /**
      * The authorization outcome from the payment processor. If the transaction has not yet been approved or denied, do not include this field.
      */
-    was_authorized: boolean;
+    was_authorized?: boolean;
 
     /**
      * The decline code as provided by your payment processor. If the transaction was not declined, do not include this field.
      */
-    decline_code: string;
+    decline_code?: string;
 }
 
 /**
@@ -341,42 +341,42 @@ export interface Order {
     /**
      * The total order amount for the transaction before taxes and discounts. The value must be at least 0 and at most 1e14 – 1.
      */
-    amount: number;
+    amount?: number;
 
     /**
      * The ISO 4217 currency code for the currency used in the transaction.
      */
-    currency: string;
+    currency?: string;
 
     /**
      * The discount code applied to the transaction. If multiple discount codes were used, please separate them with a comma.
      */
-    discount_code: string;
+    discount_code?: string;
 
     /**
      * The ID of the affiliate where the order is coming from. No specific format is required.
      */
-    affiliate_id: string;
+    affiliate_id?: string;
 
     /**
      * The ID of the sub-affiliate where the order is coming from. No specific format is required.
      */
-    subaffiliate_id: string;
+    subaffiliate_id?: string;
 
     /**
      * The URI of the referring site for this order. Needs to be absolute and have a URI scheme such as https://
      */
-    referrer_uri: string;
+    referrer_uri?: string;
 
     /**
      * Whether order was marked as a gift by the purchaser.
      */
-    is_gift: boolean;
+    is_gift?: boolean;
 
     /**
      * Whether the purchaser included a gift message.
      */
-    has_gift_message: boolean;
+    has_gift_message?: boolean;
 }
 
 /**
@@ -390,7 +390,7 @@ export interface CreditCard {
      * The issuer ID number for the credit card. This is the first 6 digits of the credit card number. It
      * identifies the issuing bank.
      */
-    issuer_id_number: string;
+    issuer_id_number?: string;
 
     /**
      * The last four digits of the credit card number.
@@ -403,35 +403,35 @@ export interface CreditCard {
      * account number (PAN) or a simple transformation of it. If you have a valid token that looks like a PAN
      * but is not one, you may prefix that token with a fixed string, e.g., token-.
      */
-    token: string;
+    token?: string;
 
     /**
      * The name of the issuing bank as provided by the end user.
      */
-    bank_name: string;
+    bank_name?: string;
 
     /**
      * The phone country code for the issuing bank as provided by the end user. If you provide this information
      * then you must provide at least one digit.
      */
-    bank_phone_country_code: string;
+    bank_phone_country_code?: string;
 
     /**
      * The phone number, without the country code, for the issuing bank as provided by the end user. Punctuation
      * characters will be stripped. After stripping punctuation characters, the number must contain only digits.
      */
-    bank_phone_number: string;
+    bank_phone_number?: string;
 
     /**
      * The address verification system (AVS) check result, as returned to you by the credit card processor. The
      * minFraud service supports the standard AVS codes.
      */
-    avs_result: string;
+    avs_result?: string;
 
     /**
      * The card verification value (CVV) code as provided by the payment processor.
      */
-    cvv_result: string;
+    cvv_result?: string;
 
 }
 
@@ -452,24 +452,24 @@ export interface ShoppingCartItem {
     /**
      * The category of the item.
      */
-    category: string;
+    category?: string;
 
     /**
      * Your internal ID for the item. No specific format is required.
      */
-    item_id: string;
+    item_id?: string;
 
     /**
      * The quantity of the item in the shopping cart. The value must be at least 0, at most 1014-1, and have no
      * fractional part.
      */
-    quantity: number;
+    quantity?: number;
 
     /**
      * The per-unit price of this item in the shopping cart. This should use the same currency as the order
      * currency. The value must be at least 0 and at most 1e14 – 1.
      */
-    price: number;
+    price?: number;
 
 }
 
