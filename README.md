@@ -3,7 +3,7 @@ A Promise & TypeScript-ified Node client for [minFraud](https://www.maxmind.com/
 mitigation API.
 
 Enables super handy auto-completion for minFraud input and response data in IDEs like VSCode and WebStorm. We're also
-using [Promises](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise), which 
+using [Promises](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) which 
 lets you take advantage of the the brand spanking new
 [`async`/`await`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function)
 syntax.
