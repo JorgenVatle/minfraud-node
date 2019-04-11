@@ -26,6 +26,10 @@
   },
   "homepage": "https://github.com/JorgenVatle/minfraud-node#readme",
   "devDependencies": {
+    "@types/axios": "^0.14.0",
     "typescript": "^3.4.3"
+  },
+  "dependencies": {
+    "axios": "^0.18.0"
   }
 }
