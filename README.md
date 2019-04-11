@@ -31,6 +31,11 @@ const client = new MinFraud({
 }) 
 ```
 
+See [minFraud Services](https://www.maxmind.com/en/solutions/minfraud-services) for the difference between Scores,
+Insights and Factors.
+
+You can use the same client object for all three methods. (`score()`, `insight()` `factor()`)
+
 ### Get Score
 ```js
 const score = await client.score({
