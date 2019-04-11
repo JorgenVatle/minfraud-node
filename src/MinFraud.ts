@@ -7,7 +7,7 @@ interface MinFraudCredentials {
     license: string;
 }
 
-export default class MinFraudApi {
+export default class MinFraud {
 
     /**
      * API client.
