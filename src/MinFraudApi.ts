@@ -49,4 +49,15 @@ export default class MinFraudApi {
         return score;
     }
 
+    /**
+     * Request minFraud factors for the given data.
+     *
+     * @param data
+     */
+    public async factor(data: MinFraudRequest): Promise<MinFraudResponse> {
+        const { data: score } = await this.api.post('/factors', data);
+
+        return score;
+    }
+
 }
