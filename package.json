@@ -11,6 +11,9 @@
     "postpublish": "git push && git push --tags",
     "prepare": "npm run build"
   },
+  "engines": {
+    "node": ">=0.12"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/JorgenVatle/minfraud-node.git"
