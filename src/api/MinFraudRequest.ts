@@ -381,6 +381,62 @@ export namespace MinFraudRequest {
     }
 
     /**
+     * Credit Card field
+     *
+     * @link https://dev.maxmind.com/minfraud/#Credit_Card_credit_card
+     */
+    export interface CreditCard {
+
+        /**
+         * The issuer ID number for the credit card. This is the first 6 digits of the credit card number. It
+         * identifies the issuing bank.
+         */
+        issuer_id_number: string;
+
+        /**
+         * The last four digits of the credit card number.
+         */
+        last_4_digits: string;
+
+        /**
+         * A token uniquely identifying the card. The token should consist of non-space printable ASCII characters.
+         * If the token is all digits, it must be more than 19 characters long. The token must not be a primary
+         * account number (PAN) or a simple transformation of it. If you have a valid token that looks like a PAN
+         * but is not one, you may prefix that token with a fixed string, e.g., token-.
+         */
+        token: string;
+
+        /**
+         * The name of the issuing bank as provided by the end user.
+         */
+        bank_name: string;
+
+        /**
+         * The phone country code for the issuing bank as provided by the end user. If you provide this information
+         * then you must provide at least one digit.
+         */
+        bank_phone_country_code: string;
+
+        /**
+         * The phone number, without the country code, for the issuing bank as provided by the end user. Punctuation
+         * characters will be stripped. After stripping punctuation characters, the number must contain only digits.
+         */
+        bank_phone_number: string;
+
+        /**
+         * The address verification system (AVS) check result, as returned to you by the credit card processor. The
+         * minFraud service supports the standard AVS codes.
+         */
+        avs_result: string;
+
+        /**
+         * The card verification value (CVV) code as provided by the payment processor.
+         */
+        cvv_result: string;
+
+    }
+
+    /**
      * Shopping Cart field
      *
      * @link https://dev.maxmind.com/minfraud/#Shopping_Cart_shopping_cart
@@ -448,6 +504,7 @@ export default interface RequestBody {
     shipping?: MinFraudRequest.Shipping;
     payment?: MinFraudRequest.Payment;
     order?: MinFraudRequest.Order;
+    credit_card?: MinFraudRequest.CreditCard;
     shopping_cart?: MinFraudRequest.ShoppingCart;
     custom_inputs?: MinFraudRequest.CustomInputs;
 }
