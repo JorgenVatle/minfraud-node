@@ -24,5 +24,8 @@
   "bugs": {
     "url": "https://github.com/JorgenVatle/minfraud-node/issues"
   },
-  "homepage": "https://github.com/JorgenVatle/minfraud-node#readme"
+  "homepage": "https://github.com/JorgenVatle/minfraud-node#readme",
+  "devDependencies": {
+    "typescript": "^3.4.3"
+  }
 }
