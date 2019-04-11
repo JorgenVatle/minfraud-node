@@ -330,3 +330,51 @@ export interface Payment {
      */
     decline_code: string;
 }
+
+/**
+ * Order field
+ *
+ * @link https://dev.maxmind.com/minfraud/#Order_order
+ */
+export interface Order {
+
+    /**
+     * The total order amount for the transaction before taxes and discounts. The value must be at least 0 and at most 1e14 – 1.
+     */
+    amount: number;
+
+    /**
+     * The ISO 4217 currency code for the currency used in the transaction.
+     */
+    currency: string;
+
+    /**
+     * The discount code applied to the transaction. If multiple discount codes were used, please separate them with a comma.
+     */
+    discount_code: string;
+
+    /**
+     * The ID of the affiliate where the order is coming from. No specific format is required.
+     */
+    affiliate_id: string;
+
+    /**
+     * The ID of the sub-affiliate where the order is coming from. No specific format is required.
+     */
+    subaffiliate_id: string;
+
+    /**
+     * The URI of the referring site for this order. Needs to be absolute and have a URI scheme such as https://
+     */
+    referrer_uri: string;
+
+    /**
+     * Whether order was marked as a gift by the purchaser.
+     */
+    is_gift: boolean;
+
+    /**
+     * Whether the purchaser included a gift message.
+     */
+    has_gift_message: boolean;
+}
