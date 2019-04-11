@@ -31,3 +31,38 @@ export default interface MinFraudResponse {
     warnings: any[];
 
 }
+
+/**
+ * IP Address
+ *
+ * @link https://dev.maxmind.com/minfraud/#IP_Address_ip_address
+ */
+export interface IpAddress {
+
+    /**
+     * This field contains the risk associated with the IP address. The value ranges from 0.01 to 99. A higher score
+     * indicates a higher risk.
+     */
+    risk: number;
+
+    country?: {
+
+        /**
+         * This value is true if the IP country is high risk and false if the country is not high risk. If the IP
+         * country could not be identified, the key will not be present.
+         */
+        is_high_risk: boolean;
+
+    }
+
+    location?: {
+
+        /**
+         * The date and time of the transaction in the time zone associated with the IP address. The value is
+         * formatted according to RFC 3339. For instance, the local time in Boston might be returned as
+         * 2015-04-27T19:17:24-04:00.
+         */
+        local_time: string;
+
+    }
+}
