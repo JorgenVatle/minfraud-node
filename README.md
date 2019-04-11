@@ -33,7 +33,7 @@ const client = new MinFraud({
 }) 
 ```
 
-### [Get Score](https://dev.maxmind.com/minfraud/#Response_Body_Examples)
+### Get Score
 ```js
 const score = await client.score({
     device: {
@@ -71,7 +71,7 @@ const score = await client.score({
 ```
 </details>
 
-### [Get Insight](https://dev.maxmind.com/minfraud/#Response_Body_Examples)
+### Get Insight
 ```js
 const insight = await client.insight({
     device: {
@@ -278,7 +278,7 @@ const insight = await client.insight({
 ```
 </details>
 
-### [Get Factors](https://dev.maxmind.com/minfraud/#Response_Body_Examples)
+### Get Factors
 ```js
 const factor = await client.factor({
     device: {
