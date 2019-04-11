@@ -192,3 +192,41 @@ export interface CreditCardIssuer {
     matches_provided_phone_number: boolean;
 
 }
+
+/**
+ * Device field
+ *
+ * This object contains information about the device that MaxMind believes is associated with the IP address passed
+ * in the request.
+ *
+ * @link https://dev.maxmind.com/minfraud/#Device_device-2
+ */
+export interface Device {
+
+    /**
+     * A number from 0.01 to 99 representing the confidence that the /device/id refers to a unique device as opposed
+     * to a cluster of similar devices. A confidence of 0.01 indicates very low confidence that the device is
+     * unique, whereas 99 indicates very high confidence.
+     */
+    confidence: number;
+
+    /**
+     * A UUID that MaxMind uses for the device associated with this IP address. Note that many devices cannot be
+     * uniquely identified because they are too common (for example, all iPhones of a given model and OS release).
+     * In these cases, the minFraud service will simply not return a UUID for that device. This is only available if
+     * you are using the Device Tracking Add-on.
+     */
+    id: string;
+
+    /**
+     * The date and time of the last sighting of the device. The value is formatted according to RFC 3339.
+     */
+    last_seen: string;
+
+    /**
+     * The local date and time of the transaction in the time zone of the device. This is determined by using the
+     * UTC offset associated with the device. The value is formatted according to RFC 3339.
+     */
+    local_time: string;
+
+}
