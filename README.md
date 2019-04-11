@@ -43,6 +43,7 @@ const score = await client.score({
 ```
 <details>
     <summary>Score response</summary>
+    
 ```json
 {
     "id": "5bc5d6c2-b2c8-40af-87f4-6d61af86b6ae",
@@ -80,6 +81,7 @@ const insight = await client.insight({
 ```
 <details>
     <summary>Insight response</summary>
+    
 ```json
 {
     "id": "5bc5d6c2-b2c8-40af-87f4-6d61af86b6ae",
@@ -286,6 +288,7 @@ const factor = await client.factor({
 ```
 <details>
     <summary>Factors response</summary>
+    
 ```json
 {
     "id": "5bc5d6c2-b2c8-40af-87f4-6d61af86b6ae",
