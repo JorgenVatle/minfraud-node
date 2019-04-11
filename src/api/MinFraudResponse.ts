@@ -30,6 +30,55 @@ export default interface MinFraudResponse {
      */
     warnings: Warning[];
 
+    /**
+     * Ip Address field
+     *
+     * @link https://dev.maxmind.com/minfraud/#IP_Address_ip_address
+     */
+    ip_address: IpAddress;
+
+    /**
+     * Credit Card field
+     *
+     * @link https://dev.maxmind.com/minfraud/#Credit_Card_credit_card-2
+     */
+    credit_card: CreditCard;
+
+    /**
+     * Device field
+     *
+     * @link https://dev.maxmind.com/minfraud/#Device_device-2
+     */
+    device: Device;
+
+    /**
+     * Email field
+     *
+     * @link https://dev.maxmind.com/minfraud/#Email_email-2
+     */
+    email: Email;
+
+    /**
+     * Shipping Address field
+     *
+     * @link https://dev.maxmind.com/minfraud/#Shipping_Address_shipping_address
+     */
+    shipping_address: ShippingAddress;
+
+    /**
+     * Billing Address field
+     *
+     * @link https://dev.maxmind.com/minfraud/#Billing_Address_billing_address
+     */
+    billing_address: BillingAddress;
+
+    /**
+     * Disposition field
+     *
+     * @Link https://dev.maxmind.com/minfraud/#Disposition_disposition
+     */
+    disposition?: Disposition;
+
 }
 
 /**
