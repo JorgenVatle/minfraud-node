@@ -1,6 +1,6 @@
 {
   "name": "minfraud-node",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "MaxMind minFraud client for Node.js (With Types! 😍)",
   "main": "dist/MinFraud.js",
   "types": "dist/MinFraud.d.ts",
@@ -18,7 +18,9 @@
     "type": "git",
     "url": "git+https://github.com/JorgenVatle/minfraud-node.git"
   },
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "keywords": [
     "minFraud",
     "maxmind",
