@@ -434,6 +434,20 @@ export namespace MinFraudRequest {
 
     }
 
-
 }
 
+/**
+ * minFraud request body.
+ */
+export default interface RequestBody {
+    device: MinFraudRequest.Device;
+    event?: MinFraudRequest.Event;
+    account?: MinFraudRequest.Account;
+    email?: MinFraudRequest.Email;
+    billing?: MinFraudRequest.Billing;
+    shipping?: MinFraudRequest.Shipping;
+    payment?: MinFraudRequest.Payment;
+    order?: MinFraudRequest.Order;
+    shopping_cart?: MinFraudRequest.ShoppingCart;
+    custom_inputs?: MinFraudRequest.CustomInputs;
+}
