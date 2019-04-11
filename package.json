@@ -5,7 +5,10 @@
   "main": "dist/MinFraud.js",
   "types": "dist/MinFraud.d.ts",
   "scripts": {
-    "test": "tsc"
+    "test": "tsc",
+    "build": "tsc",
+    "prepublish": "npm test && npm run build",
+    "postpublish": "git push && git push --tags"
   },
   "repository": {
     "type": "git",
