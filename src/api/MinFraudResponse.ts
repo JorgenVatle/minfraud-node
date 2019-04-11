@@ -264,22 +264,13 @@ export interface Email {
 }
 
 /**
- * Shipping Address field
+ * Billing Address field
  *
- * This object contains minFraud response data associated with the shipping address. If the shipping address was not
- * provided in the request or could not be parsed, this object will not be present in the response.
+ * This object contains minFraud response data associated with the billing address. If the billing address was not provided in the request or could not be parsed, this object will not be present in the response.
  *
- * @link https://dev.maxmind.com/minfraud/#Shipping_Address_shipping_address
+ * @link https://dev.maxmind.com/minfraud/#Billing_Address_billing_address
  */
-export interface ShippingAddress {
-
-    /**
-     * This field is true if the shipping address is an address associated with fraudulent transactions. The field
-     * is false when the address is not associated with increased risk. The key will only be present when a shipping
-     * address is provided.
-     */
-    is_high_risk: boolean;
-
+export interface BillingAddress {
     /**
      * This field is true if the postal code provided with the address is in the city for the address. The field is
      * false when the postal code is not in the city. The key will only be present when a shipping postal code,
@@ -303,15 +294,33 @@ export interface ShippingAddress {
     distance_to_ip_location: number;
 
     /**
-     * The distance in kilometers from the shipping address to billing address.
-     */
-    distance_to_billing_address: number;
-
-    /**
      * This field is true if the shipping address is in the IP country. The field is false when the address is not
      * in the IP country. If the IP address could not be geolocated or no shipping address was provided, then the
      * field will not be included in the response.
      */
     is_in_ip_country: boolean;
+}
+
+/**
+ * Shipping Address field
+ *
+ * This object contains minFraud response data associated with the shipping address. If the shipping address was not
+ * provided in the request or could not be parsed, this object will not be present in the response.
+ *
+ * @link https://dev.maxmind.com/minfraud/#Shipping_Address_shipping_address
+ */
+export interface ShippingAddress extends BillingAddress {
+
+    /**
+     * This field is true if the shipping address is an address associated with fraudulent transactions. The field
+     * is false when the address is not associated with increased risk. The key will only be present when a shipping
+     * address is provided.
+     */
+    is_high_risk: boolean;
+
+    /**
+     * The distance in kilometers from the shipping address to billing address.
+     */
+    distance_to_billing_address: number;
 
 }
