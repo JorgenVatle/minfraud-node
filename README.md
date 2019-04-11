@@ -41,7 +41,8 @@ const score = await client.score({
     }
 });
 ```
-##### Score response
+<details>
+    <summary>Score response</summary>
 ```json
 {
     "id": "5bc5d6c2-b2c8-40af-87f4-6d61af86b6ae",
@@ -67,6 +68,7 @@ const score = await client.score({
     ]
 }
 ```
+</details>
 
 ### [Get Insight](https://dev.maxmind.com/minfraud/#Response_Body_Examples)
 ```js
@@ -76,7 +78,8 @@ const insight = await client.insight({
     }
 });
 ```
-##### Insight response
+<details>
+    <summary>Insight response</summary>
 ```json
 {
     "id": "5bc5d6c2-b2c8-40af-87f4-6d61af86b6ae",
@@ -271,6 +274,7 @@ const insight = await client.insight({
     ]
 }
 ```
+</details>
 
 ### [Get Factors](https://dev.maxmind.com/minfraud/#Response_Body_Examples)
 ```js
@@ -280,7 +284,8 @@ const factor = await client.factor({
     }
 });
 ```
-##### Factor response
+<details>
+    <summary>Factors response</summary>
 ```json
 {
     "id": "5bc5d6c2-b2c8-40af-87f4-6d61af86b6ae",
@@ -495,6 +500,7 @@ const factor = await client.factor({
     ]
 }
 ```
+</details>
 
 ## License
 This repository is licensed under the ISC license.
