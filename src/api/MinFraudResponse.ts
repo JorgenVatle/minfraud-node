@@ -324,3 +324,25 @@ export interface ShippingAddress extends BillingAddress {
     distance_to_billing_address: number;
 
 }
+
+/**
+ * Disposition field
+ *
+ * This object contains information about how a request was handled by the custom rules you have defined. If your
+ * account does not have any custom rules defined, then this object will not be present in the response.
+ *
+ * @link https://dev.maxmind.com/minfraud/#Disposition_disposition
+ */
+export interface Disposition {
+
+    /**
+     * This describes how the request was handled.
+     */
+    action: 'accept' | 'reject' | 'manual_review';
+
+    /**
+     * This describes why the action was set to a particular value.
+     */
+    reason: 'default' | 'custom_rule';
+
+}
