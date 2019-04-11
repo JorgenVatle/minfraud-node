@@ -38,4 +38,15 @@ export default class MinFraudApi {
         return score;
     }
 
+    /**
+     * Request minFraud insights for the given data.
+     *
+     * @param data
+     */
+    public async insight(data: MinFraudRequest): Promise<MinFraudResponse> {
+        const { data: score } = await this.api.post('/insights', data);
+
+        return score;
+    }
+
 }
