@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "MaxMind minFraud client for Node.js (With Types! 😍)",
   "main": "dist/MinFraud.js",
+  "types": "dist/MinFraud.d.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
