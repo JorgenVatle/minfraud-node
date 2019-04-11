@@ -1,0 +1,28 @@
+{
+  "name": "minfraud-node",
+  "version": "1.0.0",
+  "description": "MaxMind minFraud client for Node.js (With Types! 😍)",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JorgenVatle/minfraud-node.git"
+  },
+  "keywords": [
+    "minFraud",
+    "maxmind",
+    "fraud",
+    "prevention",
+    "typescript",
+    "types",
+    "node"
+  ],
+  "author": "Jørgen Vatle <Jorgen@WcAServices.net> (https://github.com/JorgenVatle)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JorgenVatle/minfraud-node/issues"
+  },
+  "homepage": "https://github.com/JorgenVatle/minfraud-node#readme"
+}
