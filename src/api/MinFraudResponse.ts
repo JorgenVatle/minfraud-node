@@ -346,3 +346,111 @@ export interface Disposition {
     reason: 'default' | 'custom_rule';
 
 }
+
+/**
+ * Subscores field
+ *
+ * This object contains subscores for many of the individual components that are used in calculating the risk_score.
+ * This object is only included with minFraud Factors.
+ *
+ * @link https://dev.maxmind.com/minfraud/#Subscores_subscores
+ */
+export interface Subscores {
+
+    /**
+     * The risk associated with the AVS result. If present, this is a value in the range 0.01 to 99.
+     */
+    avs_result: number;
+
+    /**
+     * The risk associated with the billing address. If present, this is a value in the range 0.01 to 99.
+     */
+    billing_address: number;
+
+    /**
+     * The risk associated with the distance between the billing address and the location for the given IP address.
+     * If present, this is a value in the range 0.01 to 99.
+     */
+    billing_address_distance_to_ip_location: number;
+
+    /**
+     * The risk associated with the browser attributes such as the User-Agent and Accept-Language. If present, this
+     * is a value in the range 0.01 to 99.
+     */
+    browser: number;
+
+    /**
+     * Individualized risk of chargeback for the given IP address on your account and shop ID.This is only available
+     * to users sending chargeback data to MaxMind. If present, this is a value in the range 0.01 to 99.
+     */
+    chargeback: number;
+
+    /**
+     * The risk associated with the country the transaction originated from. If present, this is a value in the
+     * range 0.01 to 99.
+     */
+    country: number;
+
+    /**
+     * The risk associated with the combination of IP country, card issuer country, billing country, and shipping
+     * country. If present, this is a value in the range 0.01 to 99.
+     */
+    country_mismatch: number;
+
+    /**
+     * The risk associated with the CVV result. If present, this is a value in the range 0.01 to 99.
+     */
+    cvv_result: number;
+
+    /**
+     * The risk associated with the particular email address. If present, this is a value in the range 0.01 to 99.
+     */
+    email_address: number;
+
+    /**
+     * The general risk associated with the email domain. If present, this is a value in the range 0.01 to 99.
+     */
+    email_domain: number;
+
+    /**
+     * The risk associated with the issuer ID number on the email domain. If present, this is a value in the range
+     * 0.01 to 99.
+     */
+    email_tenure: number;
+
+    /**
+     * The risk associated with the issuer ID number on the IP address. If present, this is a value in the range
+     * 0.01 to 99.
+     */
+    ip_tenure: number;
+
+    /**
+     * The risk associated with the particular issuer ID number (IIN) given the billing location and the history of
+     * usage of the IIN on your account and shop ID. If present, this is a value in the range 0.01 to 99.
+     */
+    issuer_id_number: number;
+
+    /**
+     * The risk associated with the particular order amount for your account and shop ID. If present, this is a
+     * value in the range 0.01 to 99.
+     */
+    order_amount: number;
+
+    /**
+     * The risk associated with the particular phone number. If present, this is a value in the range 0.01 to 99.
+     */
+    phone_number: number;
+
+    /**
+     * The risk associated with the distance between the shipping address and the location for the given IP address.
+     * If present, this is a value in the range 0.01 to 99.
+     */
+    shipping_address_distance_to_ip_location: number;
+
+    /**
+     * The risk associated with the local time of day of the transaction in the IP address location. If present,
+     * this is a value in the range 0.01 to 99.
+     */
+    time_of_day: number;
+
+}
