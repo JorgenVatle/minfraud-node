@@ -105,6 +105,59 @@ export interface IpAddress {
 }
 
 /**
+ * Credit Card field
+ *
+ * This object contains minFraud information related to the credit card. If an issuer ID number (IIN) was not
+ * provided in the request, this object will not be present in the response.
+ *
+ * @link https://dev.maxmind.com/minfraud/#Credit_Card_credit_card-2
+ */
+export interface CreditCard {
+
+    /**
+     * This field contains a JSON object with information relating to the credit card issuer.
+     */
+    issuer: CreditCardIssuer;
+
+    /**
+     * The card brand, such as “Visa”, “Discover”, “American Express”, etc.
+     */
+    brand: string;
+
+    /**
+     * The two letter ISO 3166-1 alpha-2 country code associated with the location of the majority of customers
+     * using this credit card as determined by their billing address. In cases where the location of customers is
+     * highly mixed, this defaults to the country of the bank issuing the card.
+     */
+    country: string;
+
+    /**
+     * This field is true if the country of the billing address matches the country of the majority of customers
+     * using that IIN. It is false if both countries are available but do match. If one or both of the countries are
+     * missing, the key will not be present. In cases where the location of customers is highly mixed, the match is
+     * to the country of the bank issuing the card.
+     */
+    is_issued_in_billing_address_country: boolean;
+
+    /**
+     * This field is true if the issuer ID number is for a prepaid card. It is false if the issuer ID number is for
+     * for a non-prepaid card. The key is only present when a valid issuer ID number has been provided.
+     */
+    is_prepaid: boolean;
+
+    /**
+     * This field is true if the issuer ID number is for a virtual card. It is false if the issuer ID number is for
+     * a non-virtual card. The key is only present when a valid issuer ID number has been provided.
+     */
+    is_virtual: boolean;
+
+    /**
+     * The card type.
+     */
+    type: 'charge' | 'credit' | 'debit';
+}
+
+/**
  * Credit Card Issuer object
  *
  * This is a sub-object of credit_card that contains information related to the issuer of the card.
