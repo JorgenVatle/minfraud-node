@@ -12,13 +12,13 @@ export default class MinFraud {
     /**
      * API client.
      */
-    protected api: AxiosInstance;
+    protected client: AxiosInstance;
 
     /**
      * minFraud Api constructor.
      */
     public constructor(credentials: MinFraudCredentials) {
-        this.api = Axios.create({
+        this.client = Axios.create({
             baseURL: 'https://minfraud.maxmind.com/minfraud/v2.0/',
             auth: {
                 username: credentials.accountId,
@@ -33,7 +33,7 @@ export default class MinFraud {
      * @param data
      */
     public async score(data: MinFraudRequest): Promise<MinFraudResponse> {
-        const { data: score } = await this.api.post('/score', data);
+        const { data: score } = await this.client.post('/score', data);
 
         return score;
     }
@@ -44,7 +44,7 @@ export default class MinFraud {
      * @param data
      */
     public async insight(data: MinFraudRequest): Promise<MinFraudInsightsResponse> {
-        const { data: score } = await this.api.post('/insights', data);
+        const { data: score } = await this.client.post('/insights', data);
 
         return score;
     }
@@ -55,7 +55,7 @@ export default class MinFraud {
      * @param data
      */
     public async factor(data: MinFraudRequest): Promise<MinFraudFactorsResponse> {
-        const { data: score } = await this.api.post('/factors', data);
+        const { data: score } = await this.client.post('/factors', data);
 
         return score;
     }
