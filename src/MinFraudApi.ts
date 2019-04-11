@@ -1,6 +1,6 @@
 import Axios, {AxiosInstance} from "axios";
 import MinFraudRequest from "./api/MinFraudRequest";
-import MinFraudResponse from "./api/MinFraudResponse";
+import MinFraudResponse, {MinFraudFactorsResponse, MinFraudInsightsResponse} from "./api/MinFraudResponse";
 
 interface MinFraudCredentials {
     accountId: string;
@@ -43,7 +43,7 @@ export default class MinFraudApi {
      *
      * @param data
      */
-    public async insight(data: MinFraudRequest): Promise<MinFraudResponse> {
+    public async insight(data: MinFraudRequest): Promise<MinFraudInsightsResponse> {
         const { data: score } = await this.api.post('/insights', data);
 
         return score;
@@ -54,7 +54,7 @@ export default class MinFraudApi {
      *
      * @param data
      */
-    public async factor(data: MinFraudRequest): Promise<MinFraudResponse> {
+    public async factor(data: MinFraudRequest): Promise<MinFraudFactorsResponse> {
         const { data: score } = await this.api.post('/factors', data);
 
         return score;
