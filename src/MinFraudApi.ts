@@ -5,6 +5,7 @@
  * @link https://dev.maxmind.com/minfraud/#Device_device
  */
 export interface Device {
+
     /**
      * The IP address associated with the device used by the customer in the transaction. The IP address must be in
      * IPv4 or IPv6 presentation format, i.e., dotted-quad notation or the IPv6 hexadecimal-colon notation. (Required)
@@ -115,4 +116,69 @@ export interface Email {
      * The domain of the email address used in the transaction.
      */
     domain: string;
+}
+
+/**
+ * Billing field
+ *
+ * @link https://dev.maxmind.com/minfraud/#Billing_billing
+ */
+export interface Billing {
+
+    /**
+     * The first name of the end user as provided in their billing information.
+     */
+    first_name: string;
+
+    /**
+     * The last name of the end user as provided in their billing information.
+     */
+    last_name: string;
+
+    /**
+     * The company of the end user as provided in their billing information.
+     */
+    company: string;
+
+    /**
+     * The first line of the user’s billing address.
+     */
+    address: string;
+
+    /**
+     * The second line of the user’s billing address.
+     */
+    address_2: string;
+
+    /**
+     * The city of the user’s billing address.
+     */
+    city: string;
+
+    /**
+     * The ISO 3166-2 subdivision code for the user’s billing address.
+     */
+    region: string;
+
+    /**
+     * The two character ISO 3166-1 alpha-2 country code of the user’s billing address.
+     */
+    country: string;
+
+    /**
+     * The postal code of the user’s billing address.
+     */
+    postal: string;
+
+    /**
+     * The phone number without the country code for the user’s billing address. Punctuation characters will be
+     * stripped. After stripping punctuation characters, the number must contain only digits.
+     */
+    phone_number: string;
+
+    /**
+     * The country code for phone number associated with the user’s billing address. If you provide this information
+     * then you must provide at least one digit.
+     */
+    phone_country_code: string;
 }
