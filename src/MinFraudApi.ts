@@ -1,5 +1,7 @@
 /**
  * Device field
+ * This object contains information about the device used in the transaction. (Required)
+ *
  * @link https://dev.maxmind.com/minfraud/#Device_device
  */
 export interface Device {
@@ -34,6 +36,8 @@ export interface Device {
 
 /**
  * Event field
+ * This object contains general information related to the event being scored.
+ *
  * @link https://dev.maxmind.com/minfraud/#Event_event
  */
 export interface Event {
