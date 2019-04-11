@@ -103,3 +103,39 @@ export interface IpAddress {
 
     }
 }
+
+/**
+ * Credit Card Issuer object
+ *
+ * This is a sub-object of credit_card that contains information related to the issuer of the card.
+ *
+ * @link https://dev.maxmind.com/minfraud/#Credit_Card_Issuer_credit_cardissuer
+ */
+export interface CreditCardIssuer {
+
+    /**
+     * The name of the bank which issued the credit card.
+     */
+    name: string;
+
+    /**
+     * This field is true if the name matches the name provided in the request for the card issuer. It is false if
+     * the name does not match. The field is not included if either no name or issuer ID number (IIN) is provided in
+     * the request or if MaxMind does not have a name associated with the IIN.
+     */
+    matches_provided_name: boolean;
+
+    /**
+     * The phone number of the bank which issued the credit card. In some cases the phone number we return may be
+     * out of date.
+     */
+    phone_number: string;
+
+    /**
+     * This field is true if the phone number matches the number provided in the request for the card issuer. It is
+     * false if the number does not match. The field is not included if either no phone number or issuer ID number
+     * (IIN) is provided in the request or if MaxMind does not have a phone number associated with the IIN.
+     */
+    matches_provided_phone_number: boolean;
+
+}
