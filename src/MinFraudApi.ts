@@ -182,3 +182,17 @@ export interface Billing {
      */
     phone_country_code: string;
 }
+
+/**
+ * Shipping field
+ *
+ * @link https://dev.maxmind.com/minfraud/#Shipping_shipping
+ */
+export interface Shipping extends Billing {
+
+    /**
+     * The shipping delivery speed for the order
+     */
+    delivery_speed: 'same_day' | 'overnight' | 'expedited' | 'standard';
+
+}
