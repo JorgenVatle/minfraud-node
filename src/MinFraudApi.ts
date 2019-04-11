@@ -31,3 +31,42 @@ export interface Device {
      */
     session_id: string;
 }
+
+/**
+ * Event field
+ * @link https://dev.maxmind.com/minfraud/#Event_event
+ */
+export interface Event {
+
+    /**
+     * Your internal ID for the transaction. We can use this to locate a specific transaction in our logs, and it will
+     * also show up in email alerts and notifications from us to you. No specific format is required.
+     */
+    transaction_id: string;
+
+    /**
+     * Your internal ID for the shop, affiliate, or merchant this order is coming from. Required for minFraud users who
+     * are resellers, payment providers, gateways and affiliate networks. No specific format is required.
+     */
+    shop_id: string;
+
+    /**
+     * The date and time the event occurred. The string must be in the RFC 3339 date-time format,
+     * e.g., “2012-04-12T23:20:50.52Z”. The time must be within the past 10 years. If this field is not in the
+     * request, the current time will be used.
+     */
+    time: string;
+
+    /**
+     * Type of event that is being scored.
+     */
+    type: 'account_creation'
+        | 'account_login'
+        | 'email_change'
+        | 'password_reset'
+        | 'payout_change'
+        | 'purchase'
+        | 'recurring_purchase'
+        | 'referral'
+        | 'survey'
+}
